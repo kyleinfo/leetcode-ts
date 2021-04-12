@@ -23,13 +23,11 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
   while (cur) {
     if (cur.val !== prev.val) {
       prev.next = cur;
-      prev = cur;
+      prev = prev.next;
     }
     cur = cur.next;
   }
-  if (prev) {
-    prev.next = null;
-  }
+  if (prev) prev.next = null;
   return head;
 }
 // @lc code=end

@@ -7,19 +7,15 @@
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
   const len = nums.length;
-  let idle: number;
+  let pos: number;
   for (let i = 0; i < len; i++) {
     const cur = nums[i];
-    if (cur === val) {
-      if (idle == null) idle = i;
-    } else if (idle != null) {
-      nums[idle] = cur;
-      idle++;
-    }
+    if (pos != null && cur !== val) nums[pos++] = cur;
+    if (pos == null && cur === val) pos = i;
   }
-  if (idle != null) {
-    const needPop = len - idle;
-    for (let i = 0; i < needPop; i++) {
+  if (pos != null) {
+    const count = len - pos;
+    for (let i = 0; i < count; i++) {
       nums.pop();
     }
   }

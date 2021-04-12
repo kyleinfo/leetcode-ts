@@ -7,17 +7,15 @@
 // @lc code=start
 function plusOne(digits: number[]): number[] {
   for (let i = digits.length - 1; i >= 0; i--) {
-    const value = digits[i];
-    if (value < 9) {
-      digits[i] = value + 1;
+    const val = digits[i];
+    if (val < 9) {
+      digits[i] = val + 1;
       break;
     } else {
       digits[i] = 0;
     }
   }
-  if (digits[0] === 0) {
-    digits.unshift(1);
-  }
+  if (digits[0] === 0) digits.unshift(1);
   return digits;
 }
 // @lc code=end

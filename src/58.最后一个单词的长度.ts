@@ -8,11 +8,8 @@
 function lengthOfLastWord(s: string): number {
   let end: number;
   for (let i = s.length - 1; i >= 0; i--) {
-    if (s[i] !== ' ') {
-      if (end == null) end = i;
-    } else if (end != null) {
-      return end - i;
-    }
+    if (s[i] !== ' ' && end == null) end = i;
+    if (s[i] === ' ' && end != null) return end - i;
   }
   return end == null ? 0 : end + 1;
 }

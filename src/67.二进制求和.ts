@@ -14,20 +14,11 @@ function addBinary(a: string, b: string): string {
   for (let i = 0; i < len; i++) {
     const l = x > i ? a[x - i - 1] : '0';
     const n = y > i ? b[y - i - 1] : '0';
-    if (l === '1') {
-      if (n === '1') {
-        result.push(extra ? '1' : '0');
-        extra = true;
-      } else {
-        result.push(extra ? '0' : '1');
-      }
+    if (l === n) {
+      result.push(extra ? '1' : '0');
+      extra = l === '1';
     } else {
-      if (n === '1') {
-        result.push(extra ? '0' : '1');
-      } else {
-        result.push(extra ? '1' : '0');
-        extra = false;
-      }
+      result.push(extra ? '0' : '1');
     }
   }
   if (extra) result.push('1');

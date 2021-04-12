@@ -24,8 +24,6 @@ function romanToInt(s: string): number {
   const splited = s.split(
     /(?<![IXC])\B|(?<=I)\B(?!V|X)|(?<=X)\B(?!L|C)|(?<=C)\B(?!D|M)/g,
   );
-  return splited.reduce((prev, cur) => {
-    return prev + terms[cur];
-  }, 0);
+  return splited.reduce((prev, cur) => prev + terms[cur], 0);
 }
 // @lc code=end
