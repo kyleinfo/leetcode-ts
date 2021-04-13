@@ -6,8 +6,8 @@
 
 // @lc code=start
 function maxProfit(prices: number[]): number {
-  let result = Number.MIN_SAFE_INTEGER;
-  let sold = Number.MIN_SAFE_INTEGER;
+  let result = -Infinity;
+  let sold = -Infinity;
   for (let i = prices.length - 1; i >= 0; i--) {
     const cur = prices[i];
     sold = sold > cur ? sold : cur;
