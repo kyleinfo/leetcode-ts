@@ -10,7 +10,7 @@ function addBinary(a: string, b: string): string {
   const y = b.length;
   const result: string[] = [];
   let extra = false;
-  for (let i = 0, len = x > y ? x : y; i < len; i++) {
+  for (let i = 0, len = Math.max(x, y); i < len; i++) {
     const l = x > i ? a[x - i - 1] : "0";
     const n = y > i ? b[y - i - 1] : "0";
     if (l === n) {

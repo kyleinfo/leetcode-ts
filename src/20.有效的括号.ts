@@ -9,15 +9,13 @@ function isValid(s: string): boolean {
   if (!s) return true;
   let j = 0;
   const stack = [];
+  const match = ["()", "[]", "{}"];
   for (let i = 0, len = s.length; i < len; i++) {
     const c = s[i];
     if (j) {
       const p = stack[j - 1];
-      if (
-        (p === "(" && c === ")") ||
-        (p === "[" && c === "]") ||
-        (p === "{" && c == "}")
-      ) {
+      const pair = p + c;
+      if (match.includes(pair)) {
         j--;
         continue;
       }

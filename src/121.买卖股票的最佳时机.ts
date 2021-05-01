@@ -10,8 +10,8 @@ function maxProfit(prices: number[]): number {
   let sold = -Infinity;
   for (let i = prices.length - 1; i >= 0; i--) {
     const cur = prices[i];
-    sold = sold > cur ? sold : cur;
-    result = result > sold - cur ? result : sold - cur;
+    sold = Math.max(sold, cur);
+    result = Math.max(result, sold - cur);
   }
   return result;
 }
