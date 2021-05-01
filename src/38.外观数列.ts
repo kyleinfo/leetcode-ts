@@ -6,12 +6,11 @@
 
 // @lc code=start
 function countAndSay(n: number): string {
-  if (n === 1) return '1';
+  if (n === 1) return "1";
   const str = countAndSay(n - 1);
   const result = [];
-  const len = str.length;
   let prev: string;
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = str.length; i < len; i++) {
     const cur = str[i];
     if (prev != cur) {
       prev = cur;
@@ -22,6 +21,6 @@ function countAndSay(n: number): string {
       result[pos] = result[pos] + 1;
     }
   }
-  return result.join('');
+  return result.join("");
 }
 // @lc code=end

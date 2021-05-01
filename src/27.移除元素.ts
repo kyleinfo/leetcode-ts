@@ -6,16 +6,14 @@
 
 // @lc code=start
 function removeElement(nums: number[], val: number): number {
-  const len = nums.length;
   let pos: number;
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = nums.length; i < len; i++) {
     const cur = nums[i];
     if (pos != null && cur !== val) nums[pos++] = cur;
     if (pos == null && cur === val) pos = i;
   }
   if (pos != null) {
-    const count = len - pos;
-    for (let i = 0; i < count; i++) {
+    for (let i = 0, len = nums.length - pos; i < len; i++) {
       nums.pop();
     }
   }

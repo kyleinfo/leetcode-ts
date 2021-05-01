@@ -8,11 +8,9 @@
 function longestCommonPrefix(strs: string[]): string {
   if (!strs.length) return "";
   const first = strs[0];
-  const len = first.length;
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = first.length; i < len; i++) {
     const cur = first[i];
-    const size = strs.length;
-    for (let j = 1; j < size; j++) {
+    for (let j = 1, leng = strs.length; j < leng; j++) {
       if (cur !== strs[j][i]) {
         return first.slice(0, i);
       }

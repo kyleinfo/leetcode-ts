@@ -8,8 +8,7 @@
 function maxSubArray(nums: number[]): number {
   let max = -Infinity;
   let toEnd = 0;
-  const len = nums.length;
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = nums.length; i < len; i++) {
     const cur = nums[i];
     const sum = toEnd + cur;
     max = Math.max(max, sum);
